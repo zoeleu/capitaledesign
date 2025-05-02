@@ -113,7 +113,6 @@ export function App() {
           />
         </div>
         <div className="editor">
-          <a className="logo-link">À la recherche d’un logo ? Obtenez un devis</a>
           <Form.Root>
             <div className="text">
               <Form.Field name="alignment">
