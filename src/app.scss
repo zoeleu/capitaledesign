@@ -4,9 +4,18 @@
   font-family: sans-serif;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
 
-  width: 100%;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  @media screen and (min-width: 769px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  width: 90%;
   height: 100%;
   padding: 1rem;
 
@@ -16,20 +25,49 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 10px;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+    }
   }
+
 
   .editor {
 
     width: 60%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+
+    }
+
     background-color: #fff;
     padding: 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+    }
+
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
 
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
+
     .logo-link {
       color: blue;
     }
+  }
+}
+
+.neon-text {
+  @media screen and (max-width: 768px) {
+    font-size: 4rem !important;
+
   }
 }
 
@@ -47,6 +85,12 @@
 
 textarea {
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+
+  }
+
   height: 4rem;
   resize: none;
 }
