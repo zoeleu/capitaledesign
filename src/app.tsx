@@ -8,11 +8,11 @@ import { TextAlignLeftIcon, TextAlignCenterIcon, TextAlignRightIcon, ArrowDownIc
 const colors = [
   {
     name: 'Rouge',
-    value: '#ff0000',
+    value: '#dd0000',
   },
   {
     name: 'Vert',
-    value: '#00ff00',
+    value: '#00aa00',
   },
   {
     name: 'Bleu',
@@ -20,7 +20,7 @@ const colors = [
   },
   {
     name: 'Jaune',
-    value: '#ffff00',
+    value: '#dddd00',
   },
   {
     name: 'Violet',
@@ -30,12 +30,8 @@ const colors = [
 
 const fonts = [
   {
-    label: 'Arial',
-    value: 'Arial, sans-serif',
-  },
-  {
-    label: 'League Script',
-    value: '"League Script", sans-serif',
+    label: 'UnifrakturCook',
+    value: '"UnifrakturCook", sans-serif',
   },
   {
     label: 'Limelight',
@@ -55,13 +51,13 @@ const fonts = [
 export function App() {
 
   const [textAlignment, setTextAlignment] = useState<string>('center');
-  const [text, setText] = useState<string>('Votre texte ici');
+  const [text, setText] = useState<string>('Neon');
   const [color, setColor] = useState<string>(colors[0].value);
   const [tubeColor, setTubeColor] = useState<string>('white');
   const [size, setSize] = useState<string>('M');
   const [support, setSupport] = useState<string>('minimalist');
   const [usage, setUsage] = useState<string>('indoor');
-  const [fontFamily, setFontFamily] = useState<string>('Arial, sans-serif');
+  const [fontFamily, setFontFamily] = useState<string>('Borel, sans-serif');
 
   const [price, setPrice] = useState<number>(0);
 
@@ -73,9 +69,9 @@ export function App() {
     if (size === 'S') {
       finalPrice += 5;
     } else if (size === 'M') {
-      finalPrice += 7;
+      finalPrice += 20;
     } else if (size === 'L') {
-      finalPrice += 10;
+      finalPrice += 40;
     }
 
     // Adjust price based on support
@@ -105,7 +101,7 @@ export function App() {
             id="0"
             text={text}
             color={color}
-            fontSize={size === 'S' ? "3rem" : size === 'M' ? "4rem" : "5rem"}
+            fontSize={size === 'S' ? "5rem" : size === 'M' ? "7rem" : "10rem"}
             fontWeight={500}
             fontFamily={fontFamily}
             background={support === 'minimalist' ? 'transparent' : tubeColor === 'white' ? '#fff' : color}
@@ -192,8 +188,9 @@ export function App() {
                                 className="SelectItem"
                                 value={font.value}
                                 key={font.value}
+                                style={{ fontFamily: font.value, fontSize: '1rem' }}
                               >
-                                <Select.ItemText style={{ fontFamily: font.value }}>{font.label}</Select.ItemText>
+                                <Select.ItemText>{font.label}</Select.ItemText>
                                 <Select.ItemIndicator className="SelectItemIndicator">
                                   <CheckIcon />
                                 </Select.ItemIndicator>
@@ -403,7 +400,7 @@ export function App() {
           <div className="price">
             <span className="input-header">Prix</span>
             <div className="price-container">
-              <span className="price-value">{price} EUR</span>
+              <span className="price-value">{price} €</span>
             </div>
           </div>
         </div >
